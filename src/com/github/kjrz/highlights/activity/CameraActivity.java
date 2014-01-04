@@ -3,6 +3,8 @@ package com.github.kjrz.highlights.activity;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -22,11 +24,28 @@ public class CameraActivity extends Activity implements CameraFragmentListener {
 	}
 
 	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.camera, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onPrepareOptionsMenu(Menu menu) {
+		MenuItem score = menu.findItem(R.id.capture);
+		score.setTitle(R.string.shooter);
+		return true;
+	}
+
+	@Override
 	public void onCameraError() {
 		Toast.makeText(this, getString(R.string.toast_error_camera_preview),
 				Toast.LENGTH_SHORT).show();
 
 		finish();
+	}
+
+	public void shooterClicked(MenuItem item) {
+		Toast.makeText(this, R.string.shot_taken, Toast.LENGTH_SHORT).show();
 	}
 
 	public void takePicture(View view) {
