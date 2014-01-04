@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="ViewConstructor">
+        <ignore path="src/com/github/kjrz/highlights/CameraPreview.java" />
+        <ignore path="src/com/github/kjrz/highlights/cam/CameraPreview.java" />
+    </issue>
+</lint>
