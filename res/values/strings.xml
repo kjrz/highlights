@@ -7,5 +7,8 @@
     <string name="button_sound">sound</string>
     <string name="shooter_one">start</string>
     <string name="shooter_two">stop</string>
+    <string name="toast_error_camera_preview">Can\'t initialize camera preview.</string>
+    <string name="toast_error_save_picture">Can\'t save picture on external storage.</string>
+    <string name="content_description_take_picture">Take picture</string>
 
 </resources>

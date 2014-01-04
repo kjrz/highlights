@@ -1,4 +1,6 @@
-package com.github.kjrz.highlights;
+package com.github.kjrz.highlights.activity;
+
+import com.github.kjrz.highlights.R;
 
 import android.app.Activity;
 import android.content.Intent;
