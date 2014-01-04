@@ -77,7 +77,7 @@ public class CameraActivity extends Activity implements CameraFragmentListener {
 			}
 		}
 
-		String timeStamp = new SimpleDateFormat("yyyy/MM/dd_HH:mm:ss",
+		String timeStamp = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss",
 				Locale.getDefault()).format(new Date());
 		File mediaFile = new File(mediaStorageDir.getPath() + File.separator
 				+ "highlights_" + timeStamp + ".jpg");
