@@ -37,10 +37,6 @@
             android:name="com.github.kjrz.highlights.activity.CameraActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
-<!--             android:parentActivityName="com.github.kjrz.highlights.activity.MainActivity" -->
-<!--             <meta-data -->
-<!--                 android:name="android.support.PARENT_ACTIVITY" -->
-<!--                 android:value="com.github.kjrz.highlights.MainActivity" /> -->
         </activity>
     </application>
 
