@@ -42,9 +42,6 @@ public class CameraFragment extends Fragment implements SurfaceHolder.Callback,
 
 	private CameraOrientationListener orientationListener;
 
-	/**
-	 * On activity getting attached.
-	 */
 	@Override
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
@@ -59,9 +56,6 @@ public class CameraFragment extends Fragment implements SurfaceHolder.Callback,
 		orientationListener = new CameraOrientationListener(activity);
 	}
 
-	/**
-	 * On creating view for fragment.
-	 */
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -72,9 +66,6 @@ public class CameraFragment extends Fragment implements SurfaceHolder.Callback,
 		return previewView;
 	}
 
-	/**
-	 * On fragment getting resumed.
-	 */
 	@Override
 	public void onResume() {
 		super.onResume();
@@ -91,9 +82,6 @@ public class CameraFragment extends Fragment implements SurfaceHolder.Callback,
 		}
 	}
 
-	/**
-	 * On fragment getting paused.
-	 */
 	@Override
 	public void onPause() {
 		super.onPause();
@@ -104,9 +92,6 @@ public class CameraFragment extends Fragment implements SurfaceHolder.Callback,
 		camera.release();
 	}
 
-	/**
-	 * Start the camera preview.
-	 */
 	private synchronized void startCameraPreview() {
 		determineDisplayOrientation();
 		setupCamera();
@@ -121,9 +106,6 @@ public class CameraFragment extends Fragment implements SurfaceHolder.Callback,
 		}
 	}
 
-	/**
-	 * Stop the camera preview.
-	 */
 	private synchronized void stopCameraPreview() {
 		try {
 			camera.stopPreview();
@@ -132,10 +114,6 @@ public class CameraFragment extends Fragment implements SurfaceHolder.Callback,
 		}
 	}
 
-	/**
-	 * Determine the current display orientation and rotate the camera preview
-	 * accordingly.
-	 */
 	public void determineDisplayOrientation() {
 		CameraInfo cameraInfo = new CameraInfo();
 		Camera.getCameraInfo(cameraId, cameraInfo);
@@ -177,9 +155,6 @@ public class CameraFragment extends Fragment implements SurfaceHolder.Callback,
 		camera.setDisplayOrientation(displayOrientation);
 	}
 
-	/**
-	 * Setup the camera parameters.
-	 */
 	public void setupCamera() {
 		Camera.Parameters parameters = camera.getParameters();
 
@@ -228,18 +203,12 @@ public class CameraFragment extends Fragment implements SurfaceHolder.Callback,
 		return bestSize;
 	}
 
-	/**
-	 * Take a picture and notify the listener once the picture is taken.
-	 */
 	public void takePicture() {
 		orientationListener.rememberOrientation();
 
 		camera.takePicture(null, null, this);
 	}
 
-	/**
-	 * A picture has been taken.
-	 */
 	@Override
 	public void onPictureTaken(byte[] data, Camera camera) {
 		Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
@@ -262,11 +231,6 @@ public class CameraFragment extends Fragment implements SurfaceHolder.Callback,
 		listener.onPictureTaken(bitmap);
 	}
 
-	/**
-	 * On camera preview surface created.
-	 * 
-	 * @param holder
-	 */
 	@Override
 	public void surfaceCreated(SurfaceHolder holder) {
 		this.surfaceHolder = holder;
@@ -274,9 +238,6 @@ public class CameraFragment extends Fragment implements SurfaceHolder.Callback,
 		startCameraPreview();
 	}
 
-	/**
-	 * On camera preview surface changed.
-	 */
 	@Override
 	public void surfaceChanged(SurfaceHolder holder, int format, int width,
 			int height) {
@@ -284,9 +245,6 @@ public class CameraFragment extends Fragment implements SurfaceHolder.Callback,
 		// up to now.
 	}
 
-	/**
-	 * On camera preview surface getting destroyed.
-	 */
 	@Override
 	public void surfaceDestroyed(SurfaceHolder holder) {
 		// We don't need to handle this case as the fragment takes care of
