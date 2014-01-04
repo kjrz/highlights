@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/capture"
+        android:showAsAction="always|withText"
+        android:title="@string/shooter_one"
+        android:onClick="startStopClicked" >
+    </item>
+
+</menu>

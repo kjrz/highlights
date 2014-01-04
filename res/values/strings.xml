@@ -3,6 +3,9 @@
 
     <string name="app_name">highlights</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="button_cam">cam</string>
+    <string name="button_sound">sound</string>
+    <string name="shooter_one">start</string>
+    <string name="shooter_two">stop</string>
 
 </resources>
