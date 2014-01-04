@@ -18,9 +18,6 @@ import android.view.SurfaceHolder;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.github.kjrz.highlights.listener.CameraFragmentListener;
-import com.github.kjrz.highlights.listener.CameraOrientationListener;
-
 /**
  * Fragment for displaying the camera preview.
  * 

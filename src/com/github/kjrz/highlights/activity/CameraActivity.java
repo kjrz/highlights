@@ -22,7 +22,7 @@ import android.widget.Toast;
 
 import com.github.kjrz.highlights.R;
 import com.github.kjrz.highlights.camera.CameraFragment;
-import com.github.kjrz.highlights.listener.CameraFragmentListener;
+import com.github.kjrz.highlights.camera.CameraFragmentListener;
 
 public class CameraActivity extends Activity implements CameraFragmentListener {
 	public static final String TAG = "highlights/CameraActivity";
